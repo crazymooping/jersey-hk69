@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระบบสั่งซื้อเสื้อ Jersey HK 69 - Human Kinetics </title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght=300;400;500;600;700&family=Sarabun:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+ body {
+   font-family: 'Prompt', 'Sarabun', sans-serif;
+   background: linear-gradient(135deg, #FFF9F9 0%, #F0F7FF 50%, #FFFDF6 100%);
+ }
+ .cohort-card input:checked + span {
+   background-color: #fce7f3;
+   border-color: #f472b6;
+   color: #db2777;
+ }
+ ::-webkit-scrollbar { width: 6px; }
+ ::-webkit-scrollbar-track { background: #f1f1f1; }
+ ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+ ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+</style>
+</head>
+<body class="min-h-screen pb-12 text-slate-800">
+
+
+<header class="relative overflow-hidden bg-gradient-to-r from-pink-100 via-cream-100 to-blue-100 py-12 px-4 text-center border-b border-pink-200/50">
+ <div class="absolute top-4 left-6 text-pink-300 animate-bounce text-xl">❄️</div>
+ <div class="absolute top-12 right-12 text-blue-300 animate-pulse text-2xl">❄️</div>
+ <div class="absolute bottom-4 left-1/4 text-yellow-300 text-lg">⭐️</div>
+ <div class="max-w-4xl mx-auto">
+   <h1 class="text-2xl md:text-5xl font-bold tracking-wide text-slate-800 mb-2 drop-shadow-sm">
+      <span class="text-blue-500 font-light">Human Kinetics and Health</span>
+   </h1>
+   <p class="inline-block bg-pink-400 text-white font-medium px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm mb-4">
+      Jersey HK 69
+   </p>
+   <p class="text-slate-600 max-w-lg mx-auto text-sm md:text-base">
+      แบบฟอร์มสั่งซื้อเสื้อสำหรับชาวเฮดเค
+   </p>
+ </div>
+</header>
+
+
+<main class="max-w-5xl mx-auto px-4 mt-8">
+ <form id="orderForm" class="space-y-8">
+   
+   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-pink-100/50">
+     <div class="flex items-center gap-3 border-b border-pink-100 pb-4 mb-6">
+       <span class="flex items-center justify-center w-10 h-10 rounded-full bg-pink-100 text-pink-500 font-bold text-lg">1</span>
+       <h2 class="text-xl font-bold text-slate-800">ข้อมูลผู้สั่งซื้อ</h2>
+     </div>
+
+
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div>
+         <label class="block text-sm font-medium text-slate-700 mb-2">ชื่อ-นามสกุล <span class="text-rose-500">*</span></label>
+         <div class="relative">
+           <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-regular fa-user"></i></span>
+           <input type="text" id="buyerName" required placeholder="เช่น นายเฮ้ดเค เฮ้ดหยัง"
+             class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-300 focus:border-pink-300 outline-none transition-all">
+         </div>
+       </div>
+
+
+       <div>
+         <label class="block text-sm font-medium text-slate-700 mb-2">เบอร์โทรติดต่อ <span class="text-rose-500">*</span></label>
+         <div class="relative">
+           <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-phone"></i></span>
+           <input type="tel" id="buyerPhone" required placeholder="เช่น 0891234567" pattern="[0-9]{9,10}"
+             class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 outline-none transition-all">
+         </div>
+       </div>
+     </div>
+
+
+     <div class="mt-6">
+       <label class="block text-sm font-medium text-slate-700 mb-3">รุ่นที่กำลังศึกษา <span class="text-rose-500">*</span></label>
+       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+         <label class="cohort-card relative flex items-center justify-center cursor-pointer transition-all">
+           <input type="radio" name="cohort" value="HK05" required class="sr-only" onchange="toggleCustomCohort(false)">
+           <span class="w-full text-center font-semibold text-slate-700 p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:border-pink-300 block">HK05</span>
+         </label>
+         <label class="cohort-card relative flex items-center justify-center cursor-pointer transition-all">
+           <input type="radio" name="cohort" value="HK06" class="sr-only" onchange="toggleCustomCohort(false)">
+           <span class="w-full text-center font-semibold text-slate-700 p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:border-pink-300 block">HK06</span>
+         </label>
+         <label class="cohort-card relative flex items-center justify-center cursor-pointer transition-all">
+           <input type="radio" name="cohort" value="HK07" class="sr-only" onchange="toggleCustomCohort(false)">
+           <span class="w-full text-center font-semibold text-slate-700 p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:border-pink-300 block">HK07</span>
+         </label>
+         <label class="cohort-card relative flex items-center justify-center cursor-pointer transition-all">
+           <input type="radio" name="cohort" value="HK08" class="sr-only" onchange="toggleCustomCohort(false)">
+           <span class="w-full text-center font-semibold text-slate-700 p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:border-pink-300 block">HK08</span>
+         </label>
+         <label class="cohort-card relative flex items-center justify-center cursor-pointer transition-all">
+           <input type="radio" name="cohort" value="Other" class="sr-only" onchange="toggleCustomCohort(true)">
+           <span class="w-full text-center font-semibold text-slate-700 p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:border-pink-300 block">อื่น ๆ</span>
+         </label>
+       </div>
+
+
+       <div id="customCohortDiv" class="hidden mt-4">
+         <div class="relative">
+           <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-pen-fancy"></i></span>
+           <input type="text" id="buyerCohortCustom" placeholder="โปรดระบุ เช่น ศิษย์เก่า, อาจารย์, บุคลากร"
+             class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-300 focus:border-pink-300 outline-none transition-all">
+         </div>
+       </div>
+     </div>
+   </section>
+
+
+   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-blue-100/50">
+     <div class="flex items-center gap-3 border-b border-blue-100 pb-4 mb-6">
+       <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-bold text-lg">2</span>
+       <h2 class="text-xl font-bold text-slate-800">ภาพตัวอย่างเสื้อและตารางไซส์ (Size Chart)</h2>
+     </div>
+ 
+     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm cursor-zoom-in group transition-all hover:border-pink-300" onclick="zoomImage('https://lh3.googleusercontent.com/d/1Dq8XY2_Ih3HNRIO3aMTQOyFW11XYbUPa', 'เสื้อสีแดงเข้ม ครีม')">
+          <p class="text-xs font-bold text-rose-600 mb-1.5 flex items-center justify-center gap-1"><i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> สีแดงเข้ม ครีม</p>
+          <img src="https://lh3.googleusercontent.com/d/1Dq8XY2_Ih3HNRIO3aMTQOyFW11XYbUPa" alt="เสื้อสีแดง" class="rounded-lg max-h-[180px] mx-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm cursor-zoom-in group transition-all hover:border-blue-300" onclick="zoomImage('https://lh3.googleusercontent.com/d/13EdeFdh8SK8sZRJ5KniJHwyuQQZrgulZ', 'เสื้อสีน้ำเงิน ขาว')">
+          <p class="text-xs font-bold text-blue-600 mb-1.5 flex items-center justify-center gap-1"><i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> สีน้ำเงิน ขาว</p>
+          <img src="https://lh3.googleusercontent.com/d/13EdeFdh8SK8sZRJ5KniJHwyuQQZrgulZ" alt="เสื้อสีน้ำเงิน" class="rounded-lg max-h-[180px] mx-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-sm cursor-zoom-in group transition-all hover:border-amber-300" onclick="zoomImage('https://lh3.googleusercontent.com/d/12XSVOyuHSdWIA3qHb-FA-ggui0ONsJE1', 'เสื้อสีครีม ฟ้า')">
+          <p class="text-xs font-bold text-amber-600 mb-1.5 flex items-center justify-center gap-1"><i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> สีครีม ฟ้า</p>
+          <img src="https://lh3.googleusercontent.com/d/12XSVOyuHSdWIA3qHb-FA-ggui0ONsJE1" alt="เสื้อสีขาว" class="rounded-lg max-h-[180px] mx-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+     </div>
+
+
+     <div class="pt-2">
+       <p class="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2"><i class="fa-solid fa-table-list text-blue-500"></i> ตารางขนาดไซส์เสื้อและราคา</p>
+       <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+         <table class="w-full text-center text-sm border-collapse bg-white">
+           <thead>
+             <tr class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+               <th class="py-3 px-4">Size</th>
+               <th class="py-3 px-4">Chest (รอบอก / นิ้ว)</th>
+               <th class="py-3 px-4">Length (ความยาว / นิ้ว)</th>
+               <th class="py-3 px-4 text-pink-600">ราคา</th>
+             </tr>
+           </thead>
+           <tbody class="divide-y divide-slate-100 text-slate-600 font-medium">
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">XS</td><td class="py-2.5 px-4">34</td><td class="py-2.5 px-4">25</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">S</td><td class="py-2.5 px-4">36</td><td class="py-2.5 px-4">26</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">M</td><td class="py-2.5 px-4">38</td><td class="py-2.5 px-4">27</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">L</td><td class="py-2.5 px-4">40</td><td class="py-2.5 px-4">28</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">XL</td><td class="py-2.5 px-4">42</td><td class="py-2.5 px-4">29</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">2XL</td><td class="py-2.5 px-4">44</td><td class="py-2.5 px-4">30</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="hover:bg-slate-50/50"><td class="py-2.5 px-4 font-bold text-slate-800">3XL</td><td class="py-2.5 px-4">46</td><td class="py-2.5 px-4">31</td><td class="py-2.5 px-4 font-semibold">279.-</td></tr>
+             <tr class="bg-amber-50/50 text-amber-900 hover:bg-amber-50"><td class="py-2.5 px-4 font-bold">4XL*</td><td class="py-2.5 px-4">48</td><td class="py-2.5 px-4">32</td><td class="py-2.5 px-4 text-rose-600 font-bold">379.-</td></tr>
+             <tr class="bg-amber-50/50 text-amber-900 hover:bg-amber-50"><td class="py-2.5 px-4 font-bold">5XL*</td><td class="py-2.5 px-4">50</td><td class="py-2.5 px-4">33</td><td class="py-2.5 px-4 text-rose-600 font-bold">379.-</td></tr>
+           </tbody>
+         </table>
+       </div>
+       <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-circle-info"></i> หมายเหตุ: สำหรับไซส์พิเศษ 4XL และ 5XL จะมีราคาเพิ่มขึ้นจากไซส์ปกติ 100 บาท</p>
+     </div>
+   </section>
+
+
+   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-amber-100/50">
+     <div class="flex items-center justify-between border-b border-amber-100 pb-4 mb-6">
+       <div class="flex items-center gap-3">
+         <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600 font-bold text-lg">3</span>
+         <h2 class="text-xl font-bold text-slate-800">รายการสั่งซื้อของคุณ</h2>
+       </div>
+       <button type="button" onclick="addJerseyItem()"
+         class="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-xl text-sm transition-all shadow-sm hover:shadow flex items-center gap-2">
+         <i class="fa-solid fa-plus"></i> เพิ่มเสื้ออีกตัว
+       </button>
+     </div>
+
+
+     <div id="jerseyListContainer" class="space-y-6"></div>
+
+
+     <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
+       <div class="text-center md:text-left">
+         <span class="text-sm text-slate-500">จำนวนที่สั่งทั้งหมด:</span>
+         <span id="totalQuantityDisplay" class="text-lg font-bold text-slate-800 ml-1">0 ตัว</span>
+       </div>
+       <div class="text-center md:text-right bg-pink-50 border border-pink-100 rounded-xl px-6 py-3">
+         <span class="text-slate-600 font-medium">รวมราคาสินค้าทั้งสิ้น:</span>
+         <span id="totalPriceDisplay" class="text-2xl md:text-3xl font-extrabold text-pink-600 ml-2">0</span>
+         <span class="text-pink-600 font-bold ml-1">บาท</span>
+       </div>
+     </div>
+   </section>
+
+
+   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-emerald-100/50">
+     <div class="flex items-center gap-3 border-b border-emerald-100 pb-4 mb-6">
+       <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-500 font-bold text-lg">4</span>
+       <h2 class="text-xl font-bold text-slate-800">ชำระเงินและแนบสลิปโอนเงิน</h2>
+     </div>
+ 
+     <div class="flex flex-col items-center bg-white p-4 rounded-xl border border-slate-200 shadow-sm mb-6 max-w-sm mx-auto cursor-zoom-in group transition-all hover:border-emerald-300" onclick="zoomImage('https://lh3.googleusercontent.com/d/1K2-ZKEcaq3duS0rB7tbMkbH6XzoFxqVW', 'PromptPay QR Code')">
+       <img src="https://lh3.googleusercontent.com/d/1K2-ZKEcaq3duS0rB7tbMkbH6XzoFxqVW"
+            alt="PromptPay QR Code"
+            class="max-w-[240px] rounded-lg mb-2 transition-transform duration-300 group-hover:scale-105">
+       <div class="text-center">
+         <p class="font-bold text-slate-800">น.ส.ภัชราภา สุขวงษ์</p>
+         <p class="text-xs text-slate-500">บัญชี MAKE by KBank (xxx-x-x8048-x) <span class="text-[10px] text-pink-500 block mt-0.5"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อขยาย QR Code</span></p>
+       </div>
+     </div>
+
+
+     <div>
+       <label class="block text-sm font-medium text-slate-700 mb-2">อัปโหลดภาพหลักฐานการโอนเงิน (สลิปโอนเงิน) <span class="text-rose-500">*</span></label>
+       <div class="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center hover:bg-slate-50 transition-all cursor-pointer relative">
+         <input type="file" id="slipFile" required accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="handleSlipChange(this)">
+         <i class="fa-solid fa-cloud-arrow-up text-3xl text-emerald-500 mb-2"></i>
+         <p id="slipFileName" class="text-sm font-medium text-slate-600">คลิกหรือลากไฟล์ภาพสลิปมาวางที่นี่</p>
+         <p class="text-xs text-slate-400 mt-1">ไฟล์จะถูกจัดเก็บเป็นรูปฟอร์แมต .PNG ไปยังระบบปลายทางโดยอัตโนมัติ</p>
+       </div>
+     </div>
+   </section>
+
+
+   <div class="sticky bottom-4 z-40 bg-white/95 backdrop-blur-lg rounded-2xl p-5 shadow-xl border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+     <div>
+       <p class="text-sm text-slate-500 font-medium">รวมเสื้อทั้งหมด: <span id="summaryQty" class="text-slate-800 font-bold text-base">0</span> ตัว</p>
+       <p class="text-xl font-bold text-slate-800">ยอดเงินชำระรวมสุทธิ: <span id="totalPrice" class="text-3xl text-rose-500 font-extrabold">0</span> บาท</p>
+     </div>
+     <button type="submit" id="submitBtn" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+       <i class="fa-regular fa-paper-plane mr-2"></i> ยืนยันการสั่งซื้อ
+     </button>
+   </div>
+
+
+ </form>
+</main>
+
+
+<script>
+ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxU2aMUb5l39RFf6JV0JuVA-ULEn_E6YVRkiKdQUQr_p-KHtE9bkCzW6yvXOznn7f2g1w/exec";
+ let itemIndex = 0;
+ let base64SlipStr = "";
+
+
+ document.addEventListener("DOMContentLoaded", function() {
+   addJerseyItem();
+   document.getElementById('orderForm').addEventListener('submit', handleSubmit);
+ });
+
+
+ function toggleCustomCohort(show) {
+   const div = document.getElementById('customCohortDiv');
+   const input = document.getElementById('buyerCohortCustom');
+   if (show) {
+     div.classList.remove('hidden');
+     input.setAttribute('required', 'required');
+   } else {
+     div.classList.add('hidden');
+     input.removeAttribute('required');
+     input.value = '';
+   }
+ }
+
+
+ function addJerseyItem() {
+   itemIndex++;
+   const container = document.getElementById('jerseyListContainer');
+   const itemHTML = `
+     <div id="jerseyItem_${itemIndex}" class="jersey-item bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative space-y-4 transition-all">
+       <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+         <span class="text-sm font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">เสื้อตัวที่ <span class="item-number"></span></span>
+         <button type="button" onclick="removeJerseyItem(${itemIndex})" class="text-rose-500 hover:text-rose-700 text-xs font-semibold flex items-center gap-1">
+           <i class="fa-regular fa-trash-can"></i> ลบรายการนี้
+         </button>
+       </div>
+   
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+         <div>
+           <label class="block text-xs font-semibold text-slate-600 mb-1.5">เลือกสีเสื้อ <span class="text-rose-500">*</span></label>
+           <select name="jerseyColor" required class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-amber-200">
+             <option value="" disabled selected>-- เลือกสีเสื้อ --</option>
+             <option value="แดงเข้ม ครีม">สีแดงเข้ม ครีม</option>
+             <option value="น้ำเงิน ขาว">สีน้ำเงิน ขาว</option>
+             <option value="ครีม ฟ้า">สีครีม ฟ้า</option>
+           </select>
+         </div>
+     
+         <div>
+           <label class="block text-xs font-semibold text-slate-600 mb-1.5">เลือกไซส์เสื้อ <span class="text-rose-500">*</span></label>
+           <select name="jerseySize" required onchange="calculateTotal()" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-amber-200">
+             <option value="" disabled selected>-- เลือกไซส์ --</option>
+             <option value="XS">XS (รอบอก 34") - 279 บ.</option>
+             <option value="S">S (รอบอก 36") - 279 บ.</option>
+             <option value="M">M (รอบอก 38") - 279 บ.</option>
+             <option value="L">L (รอบอก 40") - 279 บ.</option>
+             <option value="XL">XL (รอบอก 42") - 279 บ.</option>
+             <option value="2XL">2XL (รอบอก 44") - 279 บ.</option>
+             <option value="3XL">3XL (รอบอก 46") - 279 บ.</option>
+             <option value="4XL">4XL* (รอบอก 48") - 379 บ.</option>
+             <option value="5XL">5XL* (รอบอก 50") - 379 บ.</option>
+           </select>
+         </div>
+
+
+         <div>
+           <label class="block text-xs font-semibold text-slate-600 mb-1.5">ชื่อสกรีนหลังเสื้อ <span class="text-rose-500">*</span></label>
+           <input type="text" name="jerseyScreenName" required placeholder="พิมพ์ชื่อหลังเสื้อ เช่น NAME"
+             class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none bg-slate-50 focus:bg-white focus:ring-2 focus:ring-amber-200">
+         </div>
+       </div>
+     </div>
+   `;
+   container.insertAdjacentHTML('beforeend', itemHTML);
+   updateItemNumbers();
+   calculateTotal();
+ }
+
+
+ function removeJerseyItem(id) {
+   const items = document.querySelectorAll('.jersey-item');
+   if (items.length <= 1) {
+     Swal.fire({
+       icon: 'info',
+       title: 'ไม่สามารถลบได้',
+       text: 'คุณต้องสั่งเสื้ออย่างน้อย 1 ตัวในใบสั่งซื้อนี้ครับ',
+       confirmButtonColor: '#f472b6'
+     });
+     return;
+   }
+   document.getElementById(`jerseyItem_${id}`).remove();
+   updateItemNumbers();
+   calculateTotal();
+ }
+
+
+ function updateItemNumbers() {
+   document.querySelectorAll('.jersey-item').forEach((item, index) => {
+     item.querySelector('.item-number').innerText = index + 1;
+   });
+ }
+
+
+ function calculateTotal() {
+   let totalQty = 0;
+   let totalPrice = 0;
+   document.querySelectorAll('select[name="jerseySize"]').forEach(select => {
+     if(select.value) {
+       totalQty++;
+       totalPrice += (select.value === '4XL' || select.value === '5XL') ? 379 : 279;
+     }
+   });
+
+
+   document.getElementById('totalQuantityDisplay').innerText = `${totalQty} ตัว`;
+   document.getElementById('totalPriceDisplay').innerText = totalPrice.toLocaleString();
+   document.getElementById('summaryQty').innerText = totalQty;
+   document.getElementById('totalPrice').innerText = totalPrice.toLocaleString();
+   return { totalQty, totalPrice };
+ }
+
+
+ function handleSlipChange(input) {
+   const fileNameSpan = document.getElementById('slipFileName');
+   const file = input.files[0];
+   if(file) {
+     fileNameSpan.innerText = `กำลังประมวลผลไฟล์สลิป...`;
+ 
+     const reader = new FileReader();
+     reader.onload = function(event) {
+       const img = new Image();
+       img.onload = function() {
+         const MAX_WIDTH = 600;
+         let width = img.width;
+         let height = img.height;
+         if (width > MAX_WIDTH) {
+           height = Math.round((height * MAX_WIDTH) / width);
+           width = MAX_WIDTH;
+         }
+
+
+         const canvas = document.createElement('canvas');
+         canvas.width = width;
+         canvas.height = height;
+         const ctx = canvas.getContext('2d');
+         ctx.drawImage(img, 0, 0, width, height);
+     
+         base64SlipStr = canvas.toDataURL('image/png');
+         fileNameSpan.innerText = `แปลงและย่อไฟล์รูปสลิปเรียบร้อย: ${file.name}`;
+         fileNameSpan.classList.add('text-emerald-600', 'font-bold');
+       };
+       img.src = event.target.result;
+     };
+     reader.readAsDataURL(file);
+   } else {
+     fileNameSpan.innerText = "คลิกหรือลากไฟล์ภาพสลิปมาวางที่นี่";
+     fileNameSpan.classList.remove('text-emerald-600', 'font-bold');
+     base64SlipStr = "";
+   }
+ }
+
+
+ async function handleSubmit(event) {
+   event.preventDefault();
+   const calc = calculateTotal();
+   const cohortRadio = document.querySelector('input[name="cohort"]:checked');
+   let cohortValue = cohortRadio ? cohortRadio.value : '';
+   if(cohortValue === 'Other') {
+     cohortValue = document.getElementById('buyerCohortCustom').value;
+   }
+
+
+   if (!base64SlipStr) {
+     Swal.fire({ icon: 'warning', title: 'ไม่พบไฟล์สลิป', text: 'กรุณาแนบภาพหลักฐานสลิปเงินโอนด้วยค่ะ', confirmButtonColor: '#f472b6' });
+     return;
+   }
+
+
+   const items = document.querySelectorAll('.jersey-item');
+   let orderTextDetails = "";
+   for(let i=0; i<items.length; i++) {
+     const color = items[i].querySelector('select[name="jerseyColor"]').value;
+     const size = items[i].querySelector('select[name="jerseySize"]').value;
+     const screen = items[i].querySelector('input[name="jerseyScreenName"]').value;
+ 
+     if(!color || !size || !screen) {
+       Swal.fire({ icon: 'warning', title: 'ข้อมูลไม่ครบ', text: `กรุณากรอกข้อมูลเสื้อตัวที่ ${i+1} ให้ครบถ้วน`, confirmButtonColor: '#f472b6' });
+       return;
+     }
+     orderTextDetails += `[ตัวที่ ${i+1}: สี ${color} | ไซส์ ${size} | สกรีน: ${screen}]\n`;
+   }
+
+
+   const formParams = new URLSearchParams();
+   formParams.append('buyerName', document.getElementById('buyerName').value);
+   formParams.append('buyerPhone', document.getElementById('buyerPhone').value);
+   formParams.append('buyerCohort', cohortValue);
+   formParams.append('orderDetails', orderTextDetails.trim());
+   formParams.append('totalQty', calc.totalQty);
+   formParams.append('totalPrice', calc.totalPrice);
+ 
+   formParams.append('slipBase64', base64SlipStr);
+
+
+   Swal.fire({
+     title: 'กำลังส่งข้อมูล...',
+     text: 'ระบบกำลังบันทึก',
+     allowOutsideClick: false,
+     didOpen: () => { Swal.showLoading(); }
+   });
+
+
+   const submitBtn = document.getElementById('submitBtn');
+   submitBtn.disabled = true;
+
+
+   try {
+     await fetch(WEB_APP_URL, {
+         method: 'POST',
+         mode: 'no-cors',
+         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+         body: formParams
+     });
+ 
+     Swal.fire({
+       icon: 'success',
+       title: 'สั่งซื้อและส่งสลิปสำเร็จ!',
+       text: 'ข้อมูลได้รับการเก็บบันทึกบนเซิร์ฟเวอร์เรียบร้อยแล้วค่ะ',
+       confirmButtonColor: '#3b82f6'
+     });
+ 
+     document.getElementById('orderForm').reset();
+     document.getElementById('slipFileName').innerText = "คลิกหรือลากไฟล์ภาพสลิปมาวางที่นี่";
+     document.getElementById('slipFileName').classList.remove('text-emerald-600', 'font-bold');
+     base64SlipStr = "";
+     toggleCustomCohort(false);
+     document.getElementById('jerseyListContainer').innerHTML = "";
+     addJerseyItem();
+
+
+   } catch (error) {
+     console.error(error);
+     Swal.fire({ icon: 'error', title: 'เกิดข้อผิดพลาด', text: 'ระบบไม่สามารถเข้าถึงฐานข้อมูลได้ กรุณาลองใหม่อีกครั้ง', confirmButtonColor: '#ef4444' });
+   } finally {
+     submitBtn.disabled = false;
+   }
+ }
+
+
+ function zoomImage(src, alt) {
+   Swal.fire({
+     imageUrl: src,
+     imageAlt: alt,
+     showCloseButton: true,
+     showConfirmButton: false,
+     width: 'auto',
+     background: 'rgba(255, 255, 255, 0.98)',
+     customClass: {
+       image: 'max-w-full max-h-[85vh] rounded-2xl object-contain shadow-2xl'
+     }
+   });
+ }
+</script>
+</body>
+</html>
