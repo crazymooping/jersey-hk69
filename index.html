@@ -24,6 +24,47 @@
  ::-webkit-scrollbar-track { background: #f1f1f1; }
  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+ 
+ /* ป้ายระเบิดสไตล์การ์ตูนป็อปอาร์ต ตามรูป Reference */
+ .comic-boom-container {
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 260px;
+   height: 180px;
+ }
+ .boom-outer-pink {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: #ff5e97;
+   clip-path: polygon(50% 0%, 57% 18%, 76% 5%, 72% 26%, 94% 17%, 83% 38%, 100% 42%, 85% 58%, 97% 73%, 79% 75%, 85% 95%, 66% 85%, 63% 100%, 48% 85%, 36% 98%, 34% 81%, 15% 93%, 20% 72%, 0% 74%, 15% 57%, 2% 38%, 21% 36%, 11% 16%, 30% 24%, 31% 3%, 45% 18%);
+ }
+ .boom-inner-yellow {
+   position: absolute;
+   width: 88%;
+   height: 88%;
+   background-color: #ffee55;
+   clip-path: polygon(50% 0%, 57% 18%, 76% 5%, 72% 26%, 94% 17%, 83% 38%, 100% 42%, 85% 58%, 97% 73%, 79% 75%, 85% 95%, 66% 85%, 63% 100%, 48% 85%, 36% 98%, 34% 81%, 15% 93%, 20% 72%, 0% 74%, 15% 57%, 2% 38%, 21% 36%, 11% 16%, 30% 24%, 31% 3%, 45% 18%);
+   transform: rotate(5deg);
+ }
+ .boom-center-white {
+   position: absolute;
+   width: 70%;
+   height: 70%;
+   background-color: #ffffff;
+   clip-path: polygon(50% 0%, 57% 18%, 76% 5%, 72% 26%, 94% 17%, 83% 38%, 100% 42%, 85% 58%, 97% 73%, 79% 75%, 85% 95%, 66% 85%, 63% 100%, 48% 85%, 36% 98%, 34% 81%, 15% 93%, 20% 72%, 0% 74%, 15% 57%, 2% 38%, 21% 36%, 11% 16%, 30% 24%, 31% 3%, 45% 18%);
+   transform: rotate(-3deg);
+ }
+ .dots-deco {
+   position: absolute;
+   width: 35px;
+   height: 35px;
+   background-image: radial-gradient(#00c5ff 20%, transparent 20%);
+   background-size: 7px 7px;
+   opacity: 0.7;
+ }
 </style>
 </head>
 <body class="min-h-screen pb-12 text-slate-800">
@@ -116,7 +157,7 @@
    </section>
 
 
-   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-blue-100/50">
+   <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-md border border-blue-100/50 relative overflow-visible">
      <div class="flex items-center gap-3 border-b border-blue-100 pb-4 mb-6">
        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-bold text-lg">2</span>
        <h2 class="text-xl font-bold text-slate-800">ภาพตัวอย่างเสื้อและตารางไซส์ (Size Chart)</h2>
@@ -138,8 +179,28 @@
      </div>
 
 
-     <div class="pt-2">
-       <p class="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2"><i class="fa-solid fa-table-list text-blue-500"></i> ตารางขนาดไซส์เสื้อและราคา</p>
+     <div class="pt-2 relative">
+       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+         <p class="text-sm font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-table-list text-blue-500"></i> ตารางขนาดไซส์เสื้อและราคา</p>
+         
+         <div class="comic-boom-container self-center md:self-auto transform md:rotate-2">
+           <div class="dots-deco top-2 left-2"></div>
+           <div class="dots-deco bottom-2 right-2"></div>
+           <span class="absolute top-1 right-6 text-pink-400 text-sm">★</span>
+           <span class="absolute bottom-3 left-4 text-yellow-500 text-xs">★</span>
+           
+           <div class="boom-outer-pink"></div>
+           <div class="boom-inner-yellow"></div>
+           <div class="boom-center-white flex flex-col items-center justify-center text-center p-3 z-10">
+             <span class="block text-[11px] font-black tracking-wider text-pink-600 mb-0.5">⚡️ PROMOTION ⚡️</span>
+             <p class="text-xs font-bold text-slate-800 leading-tight">
+               เมื่อซื้อครบทุก ๆ <span class="text-pink-600 font-extrabold text-sm">3</span> ชิ้น<br>
+               <span class="text-sm font-extrabold text-rose-500 bg-amber-100 px-1 rounded">ลดไปเลย 19.- บาท</span>
+             </p>
+           </div>
+         </div>
+       </div>
+
        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
          <table class="w-full text-center text-sm border-collapse bg-white">
            <thead>
@@ -185,9 +246,14 @@
 
 
      <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
-       <div class="text-center md:text-left">
-         <span class="text-sm text-slate-500">จำนวนที่สั่งทั้งหมด:</span>
-         <span id="totalQuantityDisplay" class="text-lg font-bold text-slate-800 ml-1">0 ตัว</span>
+       <div class="text-center md:text-left space-y-1">
+         <div>
+           <span class="text-sm text-slate-500">จำนวนที่สั่งทั้งหมด:</span>
+           <span id="totalQuantityDisplay" class="text-lg font-bold text-slate-800 ml-1">0 ตัว</span>
+         </div>
+         <div id="discountZone" class="text-sm text-emerald-600 font-bold hidden">
+           <i class="fa-solid fa-tags"></i> ได้รับส่วนลดโปรโมชัน: -<span id="discountPriceDisplay">0</span> บาท
+         </div>
        </div>
        <div class="text-center md:text-right bg-pink-50 border border-pink-100 rounded-xl px-6 py-3">
          <span class="text-slate-600 font-medium">รวมราคาสินค้าทั้งสิ้น:</span>
@@ -348,20 +414,36 @@
 
  function calculateTotal() {
    let totalQty = 0;
-   let totalPrice = 0;
+   let rawPrice = 0;
+   
    document.querySelectorAll('select[name="jerseySize"]').forEach(select => {
      if(select.value) {
        totalQty++;
-       totalPrice += (select.value === '4XL' || select.value === '5XL') ? 379 : 279;
+       rawPrice += (select.value === '4XL' || select.value === '5XL') ? 379 : 279;
      }
    });
 
 
+   let setsOfThree = Math.floor(totalQty / 3);
+   let discountPrice = setsOfThree * 19;
+   let finalPrice = rawPrice - discountPrice;
+
+
+   const discountZone = document.getElementById('discountZone');
+   if (discountPrice > 0) {
+     document.getElementById('discountPriceDisplay').innerText = discountPrice;
+     discountZone.classList.remove('hidden');
+   } else {
+     discountZone.classList.add('hidden');
+   }
+
+
    document.getElementById('totalQuantityDisplay').innerText = `${totalQty} ตัว`;
-   document.getElementById('totalPriceDisplay').innerText = totalPrice.toLocaleString();
+   document.getElementById('totalPriceDisplay').innerText = finalPrice.toLocaleString();
    document.getElementById('summaryQty').innerText = totalQty;
-   document.getElementById('totalPrice').innerText = totalPrice.toLocaleString();
-   return { totalQty, totalPrice };
+   document.getElementById('totalPrice').innerText = finalPrice.toLocaleString();
+   
+   return { totalQty, totalPrice: finalPrice, discount: discountPrice };
  }
 
 
